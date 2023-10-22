@@ -1,0 +1,201 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.anuncio {
+    padding: 1rem;                                  
+    padding-top: 10%;                              //Separado del borde gris con el anuncio "boton morado"
+    border-collapse: collapse; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); 
+    background-color: v.$griscontenedor;
+    @include m.desktop{
+        border: v.$gris 5px;
+        border-top-left-radius: 20px;
+        gap: 10rem; 
+    }
+    @include m.tablet{
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    .contenido-anuncio {
+        align-content: center;
+        .boton-morado-block {
+            @include m.boton(v.$morado, v.$blanco);
+        }
+    }
+}
+
+
+.icono {
+    width: 5rem;
+}
+
+.iconos-caracteristicas {
+    list-style: none;
+
+    li {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+}
+
+.containerback {
+    display: flex;
+    align-content: flex-end;
+    align-items: flex-end;
+    justify-content: center;
+    background-image: url(../img/fondo-tech.jpg);
+    padding: 0 0 3rem 0;
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+    height: 40rem;
+
+    @include m.desktop{
+        width: 100%;
+        height: 70rem;
+        align-content: flex-end;
+        align-items: flex-end;
+        justify-content: flex-end;
+        text-align: left;
+
+    }
+    h1 {
+        color: v.$blanco;
+        font-size: 1.5rem;
+        @include m.desktop{
+            font-size: 5.5rem; 
+        }
+    }
+}
+
+.inicio {
+    max-width: 50rem;
+    //padding-bottom: 1rem;
+    .boton-amarillo-block {
+        margin-top: 15rem;
+        @include m.boton(v.$naranja, v.$blanco);
+        display: inline;
+        border-radius: 5rem;
+        @include m.desktop{
+            padding: 2rem 4rem;
+            display: inline;
+        }
+    }
+}
+
+
+
+.TituloNosotros
+{
+    color: v.$naranja;
+    font-size:  48px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.Parrafo
+{
+    font-size: 20px;
+    line-height: 1.5;
+    font-family: "Helvetica Neue", sans-serif;
+    text-align: justify;
+    padding: 30px;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    border-radius: 10px;
+}
+
+.container100{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+//jose
+.TituloDonar
+{
+    color: v.$naranja;
+    font-size:  48px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.Titulocuanto
+{
+    color: v.$naranja;
+    font-size:  48px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container10{
+    background-color: rgb(235, 233, 232);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.Parrafo2
+{
+    color: v.$negro;
+    font-size: 20px;
+    line-height: 1.5;
+    font-family: "Helvetica Neue", sans-serif;
+    text-align: justify;
+    padding: 30px;
+    border-radius: 10px;
+    grid-template-columns: 1fr 1fr; 
+    align-items: center;
+}
+
+.grid4x4{
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    align-items: center;
+}
+
+
+
+.grid2x5{
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr ; 
+    align-items: center;
+}
+
+.pregunta{
+    text-align: center;
+    font-size: 4rem ;
+    text-shadow: v.$naranja 0.0em 0.0em 0.1em;
+}
+
+
+
+
+.contenedor-anuncios{
+    padding-top: 1rem;                                  //borde en el encabezado del grid 
+    padding-left: 10%;
+    padding-right: 10%;                                 
+    padding-bottom: 5rem;                               //borde del grid al final del grid
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem; 
+    @include m.tablet{
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include m.desktop{
+        padding-top: 2rem;
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+}

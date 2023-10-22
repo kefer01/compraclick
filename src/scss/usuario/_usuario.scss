@@ -1,0 +1,78 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.admin {
+
+    .nombre-pagina-admin {
+        padding-top: 2rem;
+        text-align: center;
+    }
+
+    .contenedor-admin {
+        padding-top: 2rem;
+    }
+
+    .opciones {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        display: flex;
+        justify-content: center;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5rem;
+
+    }
+
+    .opcion {
+        padding: 1rem;
+        margin: 1rem;
+        // border: 1px solid #383737;
+        // border-radius: 2rem;
+
+        p {
+            // text-align: center;
+        }
+
+        .boton-naranja {
+            margin: 1rem;
+            @include m.boton(v.$naranja, v.$blanco);
+            padding: 2rem 4rem;
+            border-radius: 1rem;
+        }
+    }
+}
+
+.tu-muro {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 3fr 7fr;
+    grid-template-areas: "perfil muro";
+}
+
+.publicaciones{
+
+    .titulo-publicaciones {
+        font-size: 3rem;
+        font-weight: v.$bold;
+        text-align: center;
+        margin: 1.5rem;
+    }
+}
+
+
+.publicacion {   
+    border: 1px solid;
+    border-radius: 2rem;
+    padding: 2rem;
+    margin-bottom: 5rem;
+    padding-left: 3rem;
+
+
+    .fotos {
+        // display: grid;
+
+        img {
+            max-width: 25%;
+        }
+    }
+}

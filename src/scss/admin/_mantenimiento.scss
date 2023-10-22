@@ -1,0 +1,51 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.tabla-usuarios { 
+    border-collapse: collapse; 
+    margin: 25px 0; 
+    font-size: 1em; 
+    font-family: sans-serif; 
+    min-width: 450px; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); 
+}
+
+.boton-naranja{
+    
+    @include m.boton(v.$naranja, v.$blanco);
+    &:hover {
+        color: v.$blanco;
+        text-decoration: none;
+    }
+}
+
+.boton-verde{
+    @include m.boton(v.$verde, v.$blanco);
+    &:hover {
+        color: v.$blanco;
+        text-decoration: none;
+    }
+}
+
+.tr { 
+    //background-color: v.$naranja; 
+    //color: v.$blanco; 
+    text-align: middle; 
+}
+
+.th, .td { 
+    padding: 10px 70px; 
+}
+
+.tbody { 
+    //border-bottom: 1px solid #dddddd; 
+} 
+
+.styled-table tbody tr:nth-of-type(even) { 
+    //background-color: #f3f3f3; 
+} 
+
+.styled-table tbody tr:last-of-type { 
+    //border-bottom: 2px solid #009879; 
+}
+

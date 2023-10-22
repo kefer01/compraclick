@@ -1,0 +1,128 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.TituloNosotros
+{
+    color: v.$naranja;
+    font-size:  48px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.Parrafo
+{
+    font-size: 20px;
+    line-height: 1.5;
+    font-family: "Helvetica Neue", sans-serif;
+    text-align: justify;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding: 4rem;
+    border-radius: 10px;
+}
+
+.container100{
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    align-items: center;
+}
+
+.grid4x4{
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    align-items: center;
+}
+
+
+
+.grid2x5{
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr ; 
+    align-items: center;
+}
+
+.pregunta{
+    text-align: center;
+    font-size: 4rem ;
+    text-shadow: v.$naranja 0.0em 0.0em 0.1em;
+}
+
+
+
+.h1proteccion{
+    font-size: 5rem;
+
+    @include m.desktop{
+    font-size: 10rem;
+    }
+
+    @include m.tablet{
+        font-size: 8rem;
+    }
+
+}
+
+.h2proteccion{
+    font-size: 2.5rem;
+
+    @include m.desktop{
+    font-size: 8rem;
+    }
+
+    @include m.tablet{
+        font-size: 4.5rem;
+    }
+
+}
+
+.h2proteccion{
+    font-size: 1.75rem;
+
+    @include m.desktop{
+    font-size: 6rem;
+    }
+
+    @include m.tablet{
+        font-size: 3rem;
+    }
+
+}
+
+.h3proteccion{
+    font-size: 1.5rem;
+
+    @include m.desktop{
+    font-size: 6rem;
+    }
+
+    @include m.tablet{
+        font-size: 2.75rem;
+    }
+
+}
+
+.pProteccion{
+    font-size: 1rem;
+
+    @include m.desktop{
+    font-size: 4rem;
+    }
+
+    @include m.tablet{
+        font-size: 2rem;
+    }
+
+}
+
+
+.contenedorProteccion{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 1rem;                                  //borde en el encabezado del grid 
+    padding-left: 10%;
+    padding-right: 10%;                                 
+    padding-bottom: 5rem;                               //borde del grid al final del grid
+}

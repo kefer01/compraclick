@@ -1,0 +1,54 @@
+@use 'variables' as v;
+@use 'base/mixins' as m;
+
+.dark-mode {
+    background-color: darken(v.$grisOscuro, 5);
+    p {
+        color: v.$blanco;
+    }
+    .navegacion a {
+        color: v.$blanco;
+        &:hover {
+            color: v.$naranja;
+        }
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+        color: v.$blanco;
+    }
+    .barra{
+        background-color: v.$grisOscuro;
+    }
+    .anuncio,
+    .resumen-propiedad {
+        background-color: v.$grisOscuro;
+        border: 1px solid v.$grisOscuro;
+        .precio {
+            color: v.$verde;
+        }
+        .icono {
+            filter: invert(100%);
+        }
+    }
+    .formulario {
+        label,
+        legend,
+        p {
+            color: v.$blanco;
+        }
+        .campo {
+            input:not([type="submit"]),
+            textarea,
+            select, option {
+                background-color: v.$grisOscuro;
+                border: 1px solid v.$grisOscuro;
+                color: v.$blanco;
+            }
+            select, #imagen {
+                color: v.$gris;
+            }
+        }
+    }
+}
