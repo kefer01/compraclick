@@ -13,13 +13,13 @@ class MainController
     {
 
         // Consultar la base de datos
-        $consulta = "SELECT p.id_producto, p.nombre, m.marca, p.descripcion, p.precio, p.imagen ";
-        $consulta .= "FROM producto p ";
-        $consulta .= "INNER JOIN producto_marca m ON p.id_producto_marca = m.id_producto_marca ";
-        $consulta .= "INNER JOIN producto_tipo t ON p.id_producto_tipo = t.id_producto_tipo ";
+        $consulta = "SELECT p.id, p.nombre, m.marca, p.descripcion, p.precio, p.imagen, ";
+        $consulta .= "p.stock FROM producto p ";
+        $consulta .= "INNER JOIN producto_marca m ON p.marca = m.id_producto_marca ";
+        $consulta .= "INNER JOIN producto_tipo t ON p.tipo = t.id_producto_tipo ";
         $consulta .= "LIMIT 3";
-        // debuguear($consulta);
         $productos = Producto::SQL($consulta);
+        // debuguear($productos);
         $router->render('main/index', [
             'titulo' => 'Inicio',
             'productos' => $productos
@@ -65,4 +65,13 @@ class MainController
             'mascotas' => $mascotas
         ]);
     }
+
+    public static function carrito(Router $router)
+    {
+        isAuth();
+        $router->render('main/carrito', [
+            'titulo' => 'Carrito de compras'
+        ]);
+    }
+
 }

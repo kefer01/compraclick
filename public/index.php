@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../includes/app.php';
 
+use Controllers\APIController;
 use Controllers\LoginController;
 use Controllers\AdminController;
 use Controllers\MainController;
@@ -70,6 +71,13 @@ $router->post('/admin/usuario/editar_perfil', [UsuarioController::class, 'actual
 // Tienda
 $router->get('/tienda/tienda', [UsuarioController::class, 'tienda']);
 //$router->get('/', [MainController::class, 'main']);
+//Carrito de compras
+$router->get('/carrito', [MainController::class, 'carrito']);
+
+
+// API
+// Productos
+$router->get('/api/producto', [APIController::class, 'buscarProducto']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();

@@ -43,7 +43,8 @@
               </p>
             </li>
           </div>
-          <a href="/mascota?id=<?php echo $producto->id_producto; ?>" class="boton-morado-block">Lo Quiero</a>
+          <button data-id-producto="<?php echo $producto->id;?>" class="boton-morado-block" onclick = "seleccionarProducto(<?php echo $producto->id?>)">Lo Quiero</button>
+          <!-- <a href="/mascota?id=<?php echo $producto->id; ?>" class="boton-morado-block">Lo Quiero</a> -->
         </div>
         <!--contenido-anuncio-->
       </div>
