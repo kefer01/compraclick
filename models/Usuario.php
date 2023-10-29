@@ -49,6 +49,9 @@ class Usuario extends ActiveRecord
         if(!$this->correo){
             self::$alertas['error'][] = 'El Correo del Usuario es Obligatorio';
         }
+        if(!filter_var($this->correo, FILTER_VALIDATE_EMAIL)){
+            self::$alertas['error'][] = 'El Correo del Usuario no es válido';
+        }
         if(!$this->pass){
             self::$alertas['error'][] = 'La Contraseña no puede ir vacía';
         }

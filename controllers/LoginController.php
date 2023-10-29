@@ -33,7 +33,7 @@ class LoginController
                             $_SESSION['admin'] = $usuario->id_rol ?? null;
                             header('Location: /admin');
                         } else {
-                            header('Location: /usuario/index');
+                            header('Location: /');
                         }
                     }
                 } else {
