@@ -27,7 +27,7 @@ $auth = $_SESSION['login'] ?? false;
             <div class="barra">
                 <div class="izquierda">
                     <a href="/">
-                        <img src="/build/img/logodoggy.png" alt="Logotipo Doggy Friends">
+                        <img src="/build/img/logo.png" alt="Logotipo Doggy Friends">
                     </a>
                 </div>
                 <!-- <div class="menu">
@@ -47,11 +47,10 @@ $auth = $_SESSION['login'] ?? false;
                     <nav class="navegacion ver">
                         <a href="/proteccion" class="link-icono proteccion">Protección al Comprador</a>
                         <a href="/nosotros" class="link-icono nosotros">Nosotros & FAQ</a>
-                        <a href="/donar" class="link-icono donar">Donar</a>
                         <?php if (!$auth) { ?>
                             <a href="/login" class="link-icono iniciosesion">Iniciar Sesión</a>
                         <?php } else { ?>
-                            <a href="/tienda/tienda" class="link-icono tienda">Tienda</a>
+                            <a href="/carrito" class="link-icono tienda">Carrito</a>
                             <a href="/usuario/index" class="link-icono perfil">Perfil</a>
                             <a href="/logout" class="link-icono cerrarsesion">Cerrar Sesión</a>
                         <?php } ?>

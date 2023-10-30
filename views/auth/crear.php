@@ -2,7 +2,7 @@
     <?php include_once __DIR__ . '/../templates/nombre-sitio.php' ?>
     <?php include_once __DIR__ . '/../templates/alertas.php' ?>
     <div class="contenedor-sm">
-        <p class="descripcion-pagina">Crea tu cuenta en Doggy Friends</p>
+        <p class="descripcion-pagina">Crea tu cuenta en CompraClick</p>
 
         <?php include_once __DIR__ . '/../templates/alertas.php' ?>
 

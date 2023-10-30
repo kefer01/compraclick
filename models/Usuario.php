@@ -35,7 +35,7 @@ class Usuario extends ActiveRecord
         $this->estado = $args['estado'] ?? '0';
         $this->token = $args['token'] ?? '';
         $this->id_rol = $args['id_rol'] ?? 3;
-        $this->confirmado = $args['confirmado'] ?? '0';
+        $this->confirmado = $args['confirmado'] ?? '1';
     }
 
     // Validación para cuentas nuevas

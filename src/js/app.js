@@ -274,6 +274,40 @@ function seleccionarProducto(idProducto) {
         .catch(error => console.error(error));
 }
 
+function eliminarProducto(idProducto) {
+    // localStorage.clear();
+    if (localStorage.getItem("listado") == null) {
+        console.log('No hay nada en el localStorage');
+        lista = [];
+        cantTemp = 0;
+    } else {
+        console.log('si hay algo en el localStorage y es lo siguiente: ');
+        lista = JSON.parse(localStorage.getItem("listado"));
+        indice = lista.findIndex(item => item.id === idProducto.toString())
+        if (indice !== -1) {
+            cantTemp = lista[indice].cantidad;
+            console.log("el indice encontrado en el localStorage: " + indice);
+        } else {
+            // El producto no existe en el carrito 
+            cantTemp = 0;
+            console.log("No existe el producto en el localstorage");
+        }
+        console.log(lista);
+
+    }
+    productoExiste = lista.findIndex(item => item.id === idProducto.toString())
+    if (productoExiste !== -1) {
+        productosLista = lista.filter(producto => producto.id !== idProducto.toString());
+        console.log(productosLista);
+        localStorage.setItem('listado', JSON.stringify(productosLista));
+        Swal.fire('Se han eliminado el articulo ' + productoExiste + ' del carrito de compras');
+        setTimeout(() => {
+            
+        }, 2000);
+        location.reload();
+    } 
+}
+
 function carrito() {
     divCarrito = document.getElementById('productos-carrito')
     if (localStorage.getItem("listado") == null) {
@@ -287,24 +321,50 @@ function carrito() {
         lista.forEach(producto => {
             const card = document.createElement("div");
             card.classList.add("card");
-          
+
+            const info = document.createElement("div");
+            info.classList.add("info");
+
+            const botones = document.createElement("div");
+            botones.classList.add("botones-carrito");
+
             const nombre = document.createElement("h2");
             nombre.textContent = producto.nombre;
-          
+
             const cantidad = document.createElement("p");
             cantidad.textContent = `Cantidad: ${producto.cantidad}`;
-          
+
             const precio = document.createElement("p");
             precio.textContent = `Precio: $${producto.precio}`;
-          
-            // Agrega los elementos al card
-            card.appendChild(nombre);
-            card.appendChild(cantidad);
-            card.appendChild(precio);
-          
+
+            const btnActualizar = document.createElement("button");
+            btnActualizar.textContent = 'Actualizar';
+            btnActualizar.addEventListener("click", () => {
+                seleccionarProducto(producto.id);
+            });
+
+            const btnEliminar = document.createElement("button");
+            btnEliminar.textContent = 'Eliminar';
+            btnEliminar.addEventListener("click", () => {
+                eliminarProducto(producto.id);
+            });
+
+            // Agrega los elementos al div info
+            info.appendChild(nombre);
+            info.appendChild(cantidad);
+            info.appendChild(precio);
+            // Agrega los botones al div botones
+            botones.appendChild(btnActualizar);
+            botones.appendChild(btnEliminar);
+            // Agrega el div info al card
+            card.appendChild(info);
+            // Agrega el div botones al card
+            card.appendChild(botones);
+
+
             // Agrega el card al contenedor divCarrito
             divCarrito.appendChild(card);
-          });
+        });
         console.log(lista);
 
     }
