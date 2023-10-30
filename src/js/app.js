@@ -300,7 +300,7 @@ function eliminarProducto(idProducto) {
         productosLista = lista.filter(producto => producto.id !== idProducto.toString());
         console.log(productosLista);
         localStorage.setItem('listado', JSON.stringify(productosLista));
-        Swal.fire('Se han eliminado el articulo ' + productoExiste + ' del carrito de compras');
+        Swal.fire('Se ha eliminado el articulo ' + idProducto + ' del carrito de compras');
         setTimeout(() => {
             
         }, 2000);
